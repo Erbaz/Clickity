@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ClickMe</title>
+    </head>
+    <style>
+           @keyframes bgcolor{
+                0% {background-color: black;}
+                10%{background-color: rgb(83, 3, 3);}
+                20%{background-color:rgb(61, 1, 49);}
+                30%{background-color:rgb(102, 1, 57);}
+                40%{background-color:rgb(0, 0, 77);}
+                50%{background-color:rgb(0, 109, 136);}
+                60%{background-color:rgb(0, 109, 0);}
+                70%{background-color:rgb(78, 121, 0);}
+                80%{background-color:rgb(94, 95, 0);}
+                90%{background-color:rgb(109, 62, 0);}
+                100%{background-color:black;}
+            }
+        body{
+            
+            
+            margin: 0 auto;
+            background-size: 100%;
+            margin: auto;
+            animation: bgcolor 25s infinite;
+            animation-direction:alternate;
+
+        }
+        h1{
+                
+                font-size:40px;
+                text-align: center;
+                color:cornsilk;
+                font-family:Arial, Helvetica, sans-serif;
+            }
+        #panel{
+            margin-top:5vh;
+            margin: auto;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            
+            background-color: rgb(255, 255, 255);
+            border:10px solid red;
+            border-radius: 10px;
+            height:30%;
+            width: 30%;
+        }
+        .message{
+                
+                color:white;
+                font-size: 20px;
+                width:50%;
+                height:80%;
+                position:absolute;
+                z-index:100;
+                background-color: darkgray;
+                border-radius: 20px;
+                top: 65%;
+                left:50%;
+                transform: translate(-50%, -50%);
+            }
+            .message h1{
+                position:relative;
+                font-size:20px;
+            }
+            .message p{
+                text-align: center;
+                margin-left: 4px;
+                padding:2px;
+                position:relative;
+                font-size: 10px;
+            }
+            #strt{
+                margin:auto;
+                margin-top:10%;
+                top:50%;
+                left:50%;
+                position:relative;
+                transform: translate(-50%, -50%);
+            }
+            #clickCheck{
+                
+                
+                color:white;
+                width:30%;
+                background-color: black;
+                margin:0 auto;
+                margin-top: 5px;
+                text-align: center;
+            }
+        @media (max-width: 500px){
+           
+            #title{
+                font-size:20vw;
+                text-align: center;
+                padding-bottom: 20%;
+                font-family:Arial, Helvetica, sans-serif;
+            }
+            #panel{
+                
+                
+                margin:auto;
+                display:flex;
+                
+                justify-content: center;
+                align-items: center;
+                width:80vw;
+                height:80vw;
+               
+                
+                
+                background-color: rgb(255, 255, 255);
+                border:10px solid red; 
+                border-radius: 10px;
+                
+            }
+            #clickCheck{
+                
+                
+                color:white;
+                width:70%;
+                background-color: black;
+                margin:0 auto;
+                margin-top: 10%;
+                text-align: center;
+            }
+            #xandy{
+                   
+                color:white;
+                width:90%;
+                background-color: black;
+                margin:0 auto;
+                margin-top: 10%;
+                text-align: center;
+
+            }
+            #boundPanel{
+                font-family: Arial;
+                color:white;
+                width:90%;
+                background-color: black;
+                margin:0 auto;
+                margin-top: 10%;
+                text-align: center;
+
+            }
+            .message{
+                display:initial;
+                color:white;
+                font-size: 20vw;
+                width:95%;
+                height:85%;
+                position:absolute;
+                z-index:100;
+                background-color: darkgray;
+                border-radius: 20px;
+                top: 70%;
+                left:50%;
+                transform: translate(-50%, -50%);
+
+            }
+            .message h1{
+                position:relative;
+                font-size:10vw;
+            }
+            .message p{
+                letter-spacing: 1px;
+                text-align: center;
+                margin-left: 4px;
+                padding:3px;
+                position:relative;
+                font-size: 5vw;
+            }
+            #strt{
+                position:relative;
+                text-align: center;
+                top: 60%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                border-radius: 5px;
+                
+                color:green;
+                background-color:blue;
+
+            }
+            #result{
+                color:red;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                text-align:center;
+                font-size: 8vw;
+            }
+            
+        }
+    </style>
+    <body>
+        <h1 id='title'>
+            <span style = "color:red;">Click</span><span style='color:rgb(76, 193, 240);'>ity</span>
+        </h1> 
+        <canvas id='panel'  class='panel' width='350' height='350'>
+
+        </canvas>
+        <h2 id='clickCheck'></h2>
+        <h2 id='xandy'></h2>
+        <h2 id='boundPanel'></h2>
+        <div id='message' class='message'>
+            <h1 id='result'></h1>
+            <h1 id='instructions'>Instructions</h1>
+            <p>
+                Welcome to CLICKITY!<br>
+                In this game, you have to catch and click on the bouncing circle<br>
+                To win, you must click the circle until it turns to the final color<br>
+                There are 10 stages you must cover. <span style='color:red;'>red</span>, <span style='color:green;'>green</span>, <span style='color:blue;'>blue</span>, <span style='color:yellow;'>yellow</span>, <span style='color:orange;'>orange</span>, <span style='color:cyan;'>cyan</span>, <span style='color:purple;'>purple</span>, <span style='color:pink;'>pink</span>, <span style='color:black;'>black</span>, and  <span style='color:white;'>white</span> 
+            </p>
+            <p>
+                In the same manner, you have 20 chances to miss. Two chances per color. If you miss 20 times, you lose.
+            </p>
+            <button id='strt' onclick=startGame()>START</button>
+        </div>
+        <script src='ClickMe.js'></script>
+    </body>
+    </html>
